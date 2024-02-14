@@ -7,14 +7,16 @@ export default function Dictionary () {
 
     function handleResponse(response) {
         console.log(response);
+        console.log(response.data[0]);
     }
 
      function search(event) {
         event.preventDefault();
-       alert(`Searching for ${keyword}`);
-
-       let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word={sunset}&key=${apiKey}`;
-        let apiKey= "315701d04b5bbc0f6b0t3c472foa1a1f";
+     
+        
+        let apiKey = "315701d04b5bbc0f6b0t3c472foa1a1f";
+        let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
+        
          axios.get(apiUrl).then(handleResponse);
      }
 
