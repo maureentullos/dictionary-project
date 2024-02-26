@@ -7,9 +7,11 @@ export default function Meanings(props) {
     return (
       <div className="Meanings">
         <h3>{props.meanings.partOfSpeech}</h3>
-        <strong>Definition:</strong>
-        <div className="Meanings">{props.meanings.definition}</div>
-        <br/>
+        
+        {props.meanings.definition.map(function(definition,index){
+       return (
+       <div key={index}>
+        <strong>Definition:</strong>{definition.definition}
         <strong>Example:</strong>
           <em>{props.meanings.example}</em>
           <br/>
@@ -18,8 +20,10 @@ export default function Meanings(props) {
        
       </div>
     );
+    })}
+    </div>
+    );
     }
-
 
 
 
