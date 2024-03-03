@@ -11,7 +11,7 @@ export default function App() {
         
       </header>
         <main>
-          <Dictionary />
+          <Dictionary defaultKeyword="integrity"/>
         </main>
       <footer className="App-footer">Coded by Maureen Tullos</footer>
     </div>
