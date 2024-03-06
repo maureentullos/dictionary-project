@@ -6,7 +6,7 @@ import "./Dictionary.css";
 
 export default function Dictionary (props) {
     let [keyword, setKeyword] = useState(props.defaultKeyword);
-let [results, setResults] = useState(null);
+    let [results, setResults] = useState(null);
      
     let [loaded, setLoaded] = useState(false);
     let [photos,setPhotos] = useState(null);
@@ -23,7 +23,10 @@ let [results, setResults] = useState(null);
       
       axios.get(apiUrl, { headers: {Authorization: `Bearer ${apiKey}`}}).then(handleImages);
     }
-
+function load() {
+  setLoaded(true);
+  search();
+}
 
     function search() {
       let apiKey = "315701d04b5bbc0f6b0t3c472foa1a1f";
@@ -37,10 +40,7 @@ let [results, setResults] = useState(null);
 
     
 
-function load() {
-  setLoaded(true);
-  search();
-}
+
     
 
      function handleSubmit(event) {
